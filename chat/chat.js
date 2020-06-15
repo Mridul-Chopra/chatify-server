@@ -4,6 +4,10 @@ module.exports = (app,io)=>{
 
     var users = [];
     var connections =[];
+	
+	app.get('/',(req,res)=>{
+		res.json('Yes its working');
+	})
 
     io.on('connection',(socket)=>{ // connect to the socket
         socket.on('message',(data)=>{ // on some message is received
