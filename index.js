@@ -9,7 +9,7 @@ const app = express(); // making the express app
 const server = http.createServer(app); // creating the http server
 const io = socketio.listen(server); //getting the socket.io server ready
 
-server.listen(5000 ,()=>{console.log('listening to port 5000')}); // listen to port 5000 
+server.listen(process.env.port || 5000 ,()=>{console.log('listening to port 5000')}); // listen to port 5000 
 
 chat(app,io); //making the chat application ready for work
 
